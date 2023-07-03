@@ -21,7 +21,7 @@ Widget homeCard({
       children: [
         Text(
           title,
-          style: AppTextTheme.textTheme.headline1,
+          style: AppTextTheme.textTheme.displayLarge,
         ),
         Align(
           alignment: Alignment.centerRight,

@@ -17,9 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(
-      const Duration(seconds: 5),
+      const Duration(seconds: 7),
       () {
-        Get.offAllNamed(AppRoutes.home);
+        Get.offAllNamed(AppRoutes.bottomNavBar);
       },
     );
   }
@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
             alignment: Alignment.center,
             child: Text(
               'Selamat datang',
-              style: AppTextTheme.textTheme.headline1,
+              style: AppTextTheme.textTheme.displayLarge,
             ),
           ),
         ],

@@ -23,14 +23,14 @@ class Home extends StatelessWidget {
       body: ListView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(20),
-        children: cardList
-            .map(
-              (e) => homeCard(
-                title: e['title'],
-                navigateName: e['onPressed'],
-              ),
-            )
-            .toList(),
+        // children: cardList
+        //     .map(
+        //       (e) => homeCard(
+        //         title: e['title'],
+        //         navigateName: e['onPressed'],
+        //       ),
+        //     )
+        //     .toList(),
       ),
     );
   }

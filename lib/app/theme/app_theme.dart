@@ -6,7 +6,7 @@ import '../colors/app_colors.dart';
 
 class AppTheme {
   static ThemeData myTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.primary,
+    scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.light(
       primary: AppColors.primary,
       surface: AppColors.btnColor,
@@ -17,7 +17,7 @@ class AppTheme {
     ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       elevation: 2,
       titleTextStyle: GoogleFonts.plusJakartaSans(
         fontSize: 15,
@@ -34,7 +34,7 @@ class AppTheme {
         ),
       ),
     ),
-    textTheme: AppTextTheme.textTheme, 
+    textTheme: AppTextTheme.textTheme,
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderSide: BorderSide(

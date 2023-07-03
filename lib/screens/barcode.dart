@@ -95,7 +95,7 @@ class _BarcodeScanState extends State<BarcodeScan>
                             ),
                             mode: LaunchMode.externalApplication,
                           ).catchError((e) {
-                            print(e);
+                            // print(e);
                           });
                         });
                       },
@@ -173,7 +173,7 @@ class _BarcodeScanState extends State<BarcodeScan>
                                       overflow: TextOverflow.ellipsis,
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText2!
+                                          .bodyMedium!
                                           .copyWith(color: Colors.white),
                                     ),
                                   ),
