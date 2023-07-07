@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(
-      const Duration(seconds: 7),
+      const Duration(seconds: 1),
       () {
         Get.offAllNamed(AppRoutes.bottomNavBar);
       },

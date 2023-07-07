@@ -1,10 +1,10 @@
 // ignore_for_file: sort_child_properties_last
 
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:barcode_app/app/colors/app_colors.dart';
 import 'package:barcode_app/screens/checkout.dart';
 import 'package:barcode_app/screens/profile.dart';
 import 'package:barcode_app/screens/search.dart';
+import 'package:barcode_app/widgets/icon_botnavbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
@@ -20,7 +20,7 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _bottomNavIndex = 0;
+  late int _bottomNavIndex = 0;
 
   static const List<dynamic> _pages = [
     Home(),
@@ -32,7 +32,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages.elementAt(_bottomNavIndex),
+      body: Stack(
+        children: [
+          _pages.elementAt(_bottomNavIndex),
+        ],
+      ),
       floatingActionButton: Container(
         width: 75,
         height: 75,
@@ -71,6 +75,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(20),
         decoration: BoxDecoration(
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(16),
         ),
         child: ClipRRect(
@@ -86,91 +91,35 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _bottomNavIndex == 0
-                      ? IconButton(
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          icon: const Icon(
-                            IconlyBold.home,
-                            color: Colors.white,
-                          ),
-                          iconSize: 28,
-                          onPressed: () {},
-                        )
-                      : IconButton(
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          icon: const Icon(
-                            IconlyLight.home,
-                            color: Colors.white,
-                          ),
-                          iconSize: 28,
-                          onPressed: () {},
-                        ),
-                  _bottomNavIndex == 1
-                      ? IconButton(
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          icon: const Icon(
-                            IconlyBold.search,
-                            color: Colors.white,
-                          ),
-                          iconSize: 28,
-                          onPressed: () {},
-                        )
-                      : IconButton(
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          icon: const Icon(
-                            IconlyLight.search,
-                            color: Colors.white,
-                          ),
-                          iconSize: 28,
-                          onPressed: () {},
-                        ),
+                  iconBotNavBar(
+                      icon: _bottomNavIndex == 0
+                          ? IconlyBold.home
+                          : IconlyLight.home,
+                      onPressed: () {
+                        setState(() => _bottomNavIndex = 0);
+                      }),
+                  iconBotNavBar(
+                      icon: _bottomNavIndex == 1
+                          ? IconlyBold.search
+                          : IconlyLight.search,
+                      onPressed: () {
+                        setState(() => _bottomNavIndex = 1);
+                      }),
                   const Icon(Icons.abc, color: Colors.transparent, size: 35),
-                  _bottomNavIndex == 2
-                      ? IconButton(
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          icon: const Icon(
-                            IconlyBold.bag,
-                            color: Colors.white,
-                          ),
-                          iconSize: 28,
-                          onPressed: () {},
-                        )
-                      : IconButton(
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          icon: const Icon(
-                            IconlyLight.bag,
-                            color: Colors.white,
-                          ),
-                          iconSize: 28,
-                          onPressed: () {},
-                        ),
-                  _bottomNavIndex == 3
-                      ? IconButton(
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          icon: const Icon(
-                            IconlyBold.profile,
-                            color: Colors.white,
-                          ),
-                          iconSize: 28,
-                          onPressed: () {},
-                        )
-                      : IconButton(
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          icon: const Icon(
-                            IconlyLight.profile,
-                            color: Colors.white,
-                          ),
-                          iconSize: 28,
-                          onPressed: () {},
-                        ),
+                  iconBotNavBar(
+                      icon: _bottomNavIndex == 2
+                          ? IconlyBold.bag
+                          : IconlyLight.bag,
+                      onPressed: () {
+                        setState(() => _bottomNavIndex = 2);
+                      }),
+                  iconBotNavBar(
+                      icon: _bottomNavIndex == 3
+                          ? IconlyBold.profile
+                          : IconlyLight.profile,
+                      onPressed: () {
+                        setState(() => _bottomNavIndex = 3);
+                      }),
                 ],
               )),
         ),

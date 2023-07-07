@@ -10,16 +10,8 @@ class CustomCircularNotchedRectangle extends NotchedShape {
   @override
   Path getOuterPath(Rect host, Rect? guest) {
     if (guest == null || !host.overlaps(guest)) return Path()..addRect(host);
-    // The guest's shape is a circle bounded by the guest rectangle.
-    // So the guest's radius is half the guest width.
+
     final double notchRadius = guest.width / 2.0;
-    // We build a path for the notch from 3 segments:
-    // Segment A - a Bezier curve from the host's top edge to segment B.
-    // Segment B - an arc with radius notchRadius.
-    // Segment C - a Bezier curve from segment B back to the host's top edge.
-    //
-    // A detailed explanation and the derivation of the formulas below is
-    // available at: goo.gl/Ufzrqn
 
     const double s1 = 30.0;
     const double s2 = 1.0;

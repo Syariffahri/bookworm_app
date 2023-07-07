@@ -19,7 +19,6 @@ dependencies:
   get: ^4.6.5
   mobile_scanner: ^3.2.0
   url_launcher: ^6.1.11
-  animated_bottom_navigation_bar: ^1.2.0
   
 dev_dependencies:
   flutter_test:
@@ -32,3 +31,5 @@ flutter:
 
   assets:
     - assets/videos/
+    - assets/images/
+    - assets/icons/

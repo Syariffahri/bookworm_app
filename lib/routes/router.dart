@@ -8,6 +8,7 @@ import '../screens/splash_screen.dart';
 class AppRoutes {
   static const String splashScreen = '/splash';
   static const String home = '/home';
+
   static const String barcode = '/barcodeScan';
   static const String bottomNavBar = '/bottomNavBar';
 
@@ -20,7 +21,7 @@ class AppRoutes {
     GetPage(
       name: home,
       page: () => const Home(),
-      transition: Transition.fadeIn,
+      transition: Transition.rightToLeft,
     ),
     GetPage(
       name: barcode,

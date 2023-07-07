@@ -95,7 +95,7 @@ class _BarcodeScanState extends State<BarcodeScan>
                             ),
                             mode: LaunchMode.externalApplication,
                           ).catchError((e) {
-                            // print(e);
+                            return e;
                           });
                         });
                       },

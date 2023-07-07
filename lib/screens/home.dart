@@ -1,6 +1,7 @@
-import 'package:barcode_app/widgets/home_widget.dart';
+import 'package:barcode_app/app/colors/app_colors.dart';
+import 'package:barcode_app/app/theme/text_theme.dart';
+import 'package:barcode_app/widgets/highlight_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,20 +10,73 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Beranda'),
+        leadingWidth: 76,
+        leading: IconButton(
+          onPressed: () {},
+          icon: Image.asset(
+            'assets/icons/menu_icon.png',
+            width: 26,
+          ),
+          splashRadius: 20.0,
+        ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              IconlyLight.setting,
+          Padding(
+            padding: const EdgeInsets.only(right: 22),
+            child: CircleAvatar(
+              backgroundColor: AppColors.secondaryDark,
             ),
-            splashRadius: 20.0,
           ),
         ],
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(25),
+        children: [
+          Row(
+            children: [
+              Text(
+                'Book',
+                style: AppTextTheme.textTheme.displayLarge!.copyWith(
+                  color: AppColors.bookTextColor,
+                ),
+              ),
+              Text(
+                'worm',
+                style: AppTextTheme.textTheme.displayLarge,
+              ),
+            ],
+          ),
+          const SizedBox(height: 5),
+          Text(
+            'How many books have you read?',
+            style: AppTextTheme.textTheme.bodyMedium!.copyWith(
+              color: AppColors.primary.withOpacity(0.6),
+            ),
+          ),
+          highlightWidget(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Categories',
+                style: AppTextTheme.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17,
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Text(
+                  'see more',
+                  style: AppTextTheme.textTheme.bodyMedium!.copyWith(
+                    color: AppColors.secondaryDark,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
         // children: cardList
         //     .map(
         //       (e) => homeCard(

@@ -1,3 +1,4 @@
+import 'package:barcode_app/widgets/empty_widget.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -5,6 +6,11 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Search'),
+      ),
+      body: emptyWidget(),
+    );
   }
 }
