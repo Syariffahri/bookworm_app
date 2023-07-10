@@ -2,7 +2,8 @@ import 'package:barcode_app/app/theme/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../routes/router.dart';
+import '../app/colors/app_colors.dart';
+import '../app/routes/router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -27,22 +28,25 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/videos/splash_screen.gif',
-            width: Get.width,
-            height: Get.height,
-            fit: BoxFit.fitHeight,
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              'Selamat datang',
-              style: AppTextTheme.textTheme.displayLarge,
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Book',
+              style: AppTextTheme.textTheme.displayLarge!.copyWith(
+                color: AppColors.bookTextColor,
+                fontSize: 42,
+              ),
             ),
-          ),
-        ],
+            Text(
+              'worm',
+              style: AppTextTheme.textTheme.displayLarge!.copyWith(
+                fontSize: 42,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

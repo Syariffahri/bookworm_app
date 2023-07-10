@@ -1,3 +1,4 @@
+import 'package:barcode_app/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -53,41 +54,9 @@ Widget highlightWidget() {
                   ),
                 ],
               ),
-              Container(
-                height: 40,
-                margin: const EdgeInsets.only(top: 15),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      AppColors.buttonLightColor,
-                      AppColors.buttonDarkColor,
-                    ],
-                    stops: const [
-                      0.2,
-                      1.0,
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 5,
-                      horizontal: 30,
-                    ),
-                  ),
-                  child: Text(
-                    'Buy Now',
-                    style: AppTextTheme.textTheme.bodyMedium!.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+              customButton(
+                text: 'Buy Now',
+                onPressed: () {},
               ),
             ],
           ),

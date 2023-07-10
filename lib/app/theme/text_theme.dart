@@ -23,7 +23,7 @@ class AppTextTheme {
     titleSmall: GoogleFonts.mulish(
       fontSize: 14,
       fontWeight: FontWeight.w400,
-      color: AppColors.subtitleColor,
+      color: AppColors.greyBoldColor,
     ),
     displayLarge: GoogleFonts.mulish(
       fontSize: 37,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app/theme/app_theme.dart';
-import 'routes/router.dart';
+import 'app/routes/router.dart';
 
 late TargetPlatform? platform;
 
