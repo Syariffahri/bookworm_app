@@ -64,3 +64,31 @@ Widget customButton({
     ),
   );
 }
+
+Widget customIconButton({
+  void Function()? onTap,
+  required IconData icon,
+}) {
+  return InkWell(
+    onTap: onTap,
+    borderRadius: BorderRadius.circular(16),
+    child: Ink(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            blurRadius: 10.0,
+            spreadRadius: 7.0,
+            offset: const Offset(0.0, 1.0),
+          ),
+        ],
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Icon(
+        icon,
+      ),
+    ),
+  );
+}
