@@ -105,20 +105,22 @@ class _HomeState extends State<Home> {
               itemBuilder: (BuildContext context, int index) {
                 return Row(
                   children: categoriesList
-                      .map((e) => Container(
-                            height: 65,
-                            margin: const EdgeInsets.only(right: 12),
-                            child: customButton(
-                              text: e['title'],
-                              icon: e['icon'],
-                              isActive: e['active'],
-                              onPressed: () {
-                                setState(() {
-                                  e['active'] = !e['active'];
-                                });
-                              },
-                            ),
-                          ))
+                      .map(
+                        (e) => Container(
+                          height: 65,
+                          margin: const EdgeInsets.only(right: 12),
+                          child: customButton(
+                            text: e['title'],
+                            icon: e['icon'],
+                            isActive: e['active'],
+                            onPressed: () {
+                              setState(() {
+                                e['active'] = !e['active'];
+                              });
+                            },
+                          ),
+                        ),
+                      )
                       .toList(),
                 );
               },

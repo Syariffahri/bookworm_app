@@ -81,7 +81,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: BottomAppBar(
-              padding: const EdgeInsets.fromLTRB(30, 15, 30, 0),
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
               color: AppColors.primary,
               shape: CustomCircularNotchedRectangle(
                 notchOffset: const Offset(-19, 0),
