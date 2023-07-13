@@ -26,11 +26,11 @@ class _HomeState extends State<Home> {
           ),
           splashRadius: 20.0,
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 22),
+            padding: EdgeInsets.only(right: 22),
             child: CircleAvatar(
-              backgroundColor: AppColors.secondaryDark,
+              backgroundImage: AssetImage('assets/images/profile.png'),
             ),
           ),
         ],

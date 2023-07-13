@@ -1,5 +1,6 @@
 // ignore_for_file: unnecessary_null_comparison
 
+import 'package:barcode_app/app/theme/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
@@ -88,13 +89,14 @@ class _BarcodeScanState extends State<BarcodeScan>
                       onDetect: (barcode) {
                         setState(() {
                           this.barcode = barcode;
-                          print(barcode.barcodes.first.rawValue ?? '');
+                          // print(barcode.barcodes.first.rawValue ?? '');
                           launchUrl(
                             Uri.parse(
                               barcode.barcodes.first.rawValue ?? '',
                             ),
                             mode: LaunchMode.externalApplication,
                           ).catchError((e) {
+                            print(e);
                             return e;
                           });
                         });
@@ -162,18 +164,16 @@ class _BarcodeScanState extends State<BarcodeScan>
                               child: SizedBox(
                                 width: MediaQuery.of(context).size.width - 200,
                                 height: 50,
-                                child: FittedBox(
-                                  child: InkWell(
-                                    onTap: () {},
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Center(
                                     child: Text(
                                       // barcode?.barcodes.first.rawValue ??
                                       //     'Scan something!',
                                       'Scan sesuatu',
 
                                       overflow: TextOverflow.ellipsis,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
+                                      style: AppTextTheme.textTheme.labelLarge!
                                           .copyWith(color: Colors.white),
                                     ),
                                   ),

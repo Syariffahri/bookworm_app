@@ -1,5 +1,7 @@
 // ignore_for_file: sort_child_properties_last
 
+import 'dart:io';
+
 import 'package:barcode_app/app/colors/app_colors.dart';
 import 'package:barcode_app/screens/checkout.dart';
 import 'package:barcode_app/screens/profile.dart';
@@ -81,7 +83,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: BottomAppBar(
-              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+              // padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+              padding: EdgeInsets.fromLTRB(
+                30,
+                15,
+                30,
+                Platform.isAndroid ? 15 : 0,
+              ),
               color: AppColors.primary,
               shape: CustomCircularNotchedRectangle(
                 notchOffset: const Offset(-19, 0),
