@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison
 
 import 'package:barcode_app/app/theme/text_theme.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
@@ -96,7 +97,9 @@ class _BarcodeScanState extends State<BarcodeScan>
                             ),
                             mode: LaunchMode.externalApplication,
                           ).catchError((e) {
-                            print(e);
+                            if (kDebugMode) {
+                              print(e);
+                            }
                             return e;
                           });
                         });

@@ -4,7 +4,17 @@ import 'package:get/get.dart';
 import 'app/theme/app_theme.dart';
 import 'app/routes/router.dart';
 
-late TargetPlatform? platform;
+/*
+
+//-----Coding with Fahri------//
+
+Github    : https://github.com/Syariffahri
+Linkedin  : Syarif Muhammad Fahri
+Instagram : @syariffahrii
+Youtube   : Coding with Fahri
+
+
+*/
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

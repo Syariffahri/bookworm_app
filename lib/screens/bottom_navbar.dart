@@ -24,7 +24,7 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   late int _bottomNavIndex = 0;
 
-  static const List<dynamic> _pages = [
+  static const List _pages = [
     Home(),
     SearchScreen(),
     CheckoutScreen(),

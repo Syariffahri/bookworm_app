@@ -36,7 +36,6 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: ListView(
-        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(vertical: 15),
         children: [
           Padding(

@@ -49,8 +49,7 @@ class DetailScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                 margin: const EdgeInsets.only(top: 20, left: 10, bottom: 20),
                 decoration: BoxDecoration(
                   color: AppColors.categoriesColor,
