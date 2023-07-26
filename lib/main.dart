@@ -10,7 +10,7 @@ import 'app/routes/router.dart';
 
 Github    : https://github.com/Syariffahri
 Linkedin  : Syarif Muhammad Fahri
-Instagram : @syariffahrii
+Instagram : @fahridrus.dev
 Youtube   : Coding with Fahri
 
 
